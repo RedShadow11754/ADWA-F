@@ -1,7 +1,5 @@
 <script>
     import { marked } from "marked";
-    // Import the environment variable for the API URL
-    import { public_env } from '$env/static/public'; 
 
     let messages = $state([
         {
@@ -12,7 +10,7 @@
     let input = $state("");
     let isTyping = $state(false);
 
-    const API_BASE_URL = PUBLIC_API_URL || "http://localhost:8000";
+    const API_BASE_URL = import.meta.env.VITE_API_URL || "https://project-adwa-1.onrender.com";
 
     $effect(() => {
         messages.length;
